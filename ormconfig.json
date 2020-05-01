@@ -1,0 +1,14 @@
+{
+  "type":"postgres",
+  "host":"localhost",
+  "port":5432,
+  "username":"postgres",
+  "password":"152547xcz",
+  "database":"gobarber-typescript",
+  "migrations": [
+    "./src/database/migrations/*.ts"
+  ],
+  "cli": {
+    "migrationsDir":"./src/database/migrations"
+  }
+}
