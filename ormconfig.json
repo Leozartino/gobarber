@@ -5,6 +5,9 @@
   "username":"postgres",
   "password":"152547xcz",
   "database":"gobarber-typescript",
+  "entities":[
+    "./src/models/*.ts"  
+  ],
   "migrations": [
     "./src/database/migrations/*.ts"
   ],
