@@ -9,6 +9,7 @@ const appointmentsRouter = Router();
 appointmentsRouter.get('/', (request, response) => {
   const appointmentsRepository = getCustomRepository(AppointmentsRepository);
   const appointments = appointmentsRepository.find();
+
   return response.status(200).json(appointments);
 });
 
