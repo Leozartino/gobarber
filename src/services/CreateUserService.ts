@@ -1,4 +1,5 @@
 import { getRepository } from 'typeorm';
+import { hash } from 'bcryptjs';
 import User from '../models/User';
 
 interface RequestBodyDTO {
@@ -18,14 +19,16 @@ class CreateUserService {
     const checkUserExists = await usersRepository.findOne({ where: { email } });
 
     if (checkUserExists) {
-      throw Error('Email adresss already used.');
+      throw new Error('Email adresss already used.');
     }
+
+    const hashedPassword = await hash(password, 8);
 
     // Nesta estapa ele não salva no banco (não assincrono), só cria uma instância
     const user = usersRepository.create({
       name,
       email,
-      password,
+      password: hashedPassword,
     });
     // Momento de criação do usuário
     await usersRepository.save(user);
