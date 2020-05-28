@@ -1,2 +1,2 @@
 # gobarber
-💈Aplicação para cadastro de agendamentos de serviços fornecido por uma barbearia. ✂️
+💈Aplicação para agendamentos de serviços fornecidos por uma barbearia. ✂️
